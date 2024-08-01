@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <h2 class="titulo text-center">Control de Inventario Empresarial</h2>
+    <form (ngSubmit)="registrarMovimiento()">
+      <div class="form-group">
+        <label for="producto">Producto:</label>
+        <input type="text" class="form-control border-primary" id="producto" [(ngModel)]="inventario.producto" name="producto" placeholder="Nombre del producto" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" class="form-control border-primary" id="cantidad" [(ngModel)]="inventario.cantidad" name="cantidad" placeholder="Ingrese la cantidad" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="tipoMovimiento">Tipo de Movimiento:</label>
+        <select class="form-control border-primary" id="tipoMovimiento" [(ngModel)]="inventario.tipoMovimiento" name="tipoMovimiento" required>
+          <option value="entrada">Entrada</option>
+          <option value="salida">Salida</option>
+        </select>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Registrar Movimiento</button>
+    </form>
+  
+    <!-- Tabla de movimientos -->
+    <div class="mt-4">
+      <h3>Movimientos de Inventario</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Tipo Movimiento</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movimiento of movimientos">
+            <td>{{ movimiento.id }}</td>
+            <td>{{ movimiento.producto }}</td>
+            <td>{{ movimiento.cantidad }}</td>
+            <td>{{ movimiento.tipoMovimiento }}</td>
+            <td>{{ movimiento.fecha }}</td>
+            <td>
+              <button class="btn btn-warning" (click)="seleccionarMovimiento(movimiento)">Editar</button>
+              <button class="btn btn-danger" (click)="eliminarMovimiento(movimiento.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <h3></h3>
+
+  <!-- Tabla de Envíos -->
+  <div class="row mb-3">
+    <div class=" titulo col-md-12">
+      <h3>Resultados de Envíos</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre del Envia</th>
+            <th>Tipo ID Envia</th>
+            <th>Número ID Envia</th>
+            <th>Teléfono Envia</th>
+            <th>Dirección Envia</th>
+            <th>Nombre del Recibe</th>
+            <th>Tipo ID Recibe</th>
+            <th>Número ID Recibe</th>
+            <th>Teléfono Recibe</th>
+            <th>Dirección Recibe</th>
+            <th>Categoría</th>
+      
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let envio of envios">
+            <td>{{ envio.id }}</td>
+            <td>{{ envio.nombre_envia }}</td>
+            <td>{{ envio.tipo_id_envia }}</td>
+            <td>{{ envio.num_id_envia }}</td>
+            <td>{{ envio.telefono_envia }}</td>
+            <td>{{ envio.direccion_envia }}</td>
+            <td>{{ envio.nombre_recibe }}</td>
+            <td>{{ envio.tipo_id_recibe }}</td>
+            <td>{{ envio.num_id_recibe }}</td>
+            <td>{{ envio.telefono_recibe }}</td>
+            <td>{{ envio.direccion_recibe }}</td>
+            <td>
+              <!--<button class="btn btn-warning btn-sm" (click)="seleccionarEnvio(envio)">Editar</button>-->
+              <button class="btn btn-danger btn-sm" (click)="eliminarEnvio(envio.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Formulario de Edición -->
+  <div *ngIf="selectedEnvio" class="row">
+    <div class="col-md-12">
+      <h3>Editar Envío</h3>
+      <form (ngSubmit)="actualizarEnvio()">
+        <div class="mb-3">
+          <label for="nombre_envia" class="form-label">Nombre del Envia</label>
+          <input type="text" id="nombre_envia" class="form-control" [(ngModel)]="selectedEnvio.nombre_envia" name="nombre_envia" required>
+        </div>
+        <div class="mb-3">
+          <label for="tipo_id_envia" class="form-label">Tipo ID Envia</label>
+          <input type="text" id="tipo_id_envia" class="form-control" [(ngModel)]="selectedEnvio.tipo_id_envia" name="tipo_id_envia" required>
+        </div>
+        <div class="mb-3">
+          <label for="num_id_envia" class="form-label">Número ID Envia</label>
+          <input type="text" id="num_id_envia" class="form-control" [(ngModel)]="selectedEnvio.num_id_envia" name="num_id_envia" required>
+        </div>
+        <div class="mb-3">
+          <label for="telefono_envia" class="form-label">Teléfono Envia</label>
+          <input type="text" id="telefono_envia" class="form-control" [(ngModel)]="selectedEnvio.telefono_envia" name="telefono_envia" required>
+        </div>
+        <div class="mb-3">
+          <label for="direccion_envia" class="form-label">Dirección Envia</label>
+          <input type="text" id="direccion_envia" class="form-control" [(ngModel)]="selectedEnvio.direccion_envia" name="direccion_envia" required>
+        </div>
+        <div class="mb-3">
+          <label for="nombre_recibe" class="form-label">Nombre del Recibe</label>
+          <input type="text" id="nombre_recibe" class="form-control" [(ngModel)]="selectedEnvio.nombre_recibe" name="nombre_recibe" required>
+        </div>
+        <div class="mb-3">
+          <label for="tipo_id_recibe" class="form-label">Tipo ID Recibe</label>
+          <input type="text" id="tipo_id_recibe" class="form-control" [(ngModel)]="selectedEnvio.tipo_id_recibe" name="tipo_id_recibe" required>
+        </div>
+        <div class="mb-3">
+          <label for="num_id_recibe" class="form-label">Número ID Recibe</label>
+          <input type="text" id="num_id_recibe" class="form-control" [(ngModel)]="selectedEnvio.num_id_recibe" name="num_id_recibe" required>
+        </div>
+        <div class="mb-3">
+          <label for="telefono_recibe" class="form-label">Teléfono Recibe</label>
+          <input type="text" id="telefono_recibe" class="form-control" [(ngModel)]="selectedEnvio.telefono_recibe" name="telefono_recibe" required>
+        </div>
+        <div class="mb-3">
+          <label for="direccion_recibe" class="form-label">Dirección Recibe</label>
+          <input type="text" id="direccion_recibe" class="form-control" [(ngModel)]="selectedEnvio.direccion_recibe" name="direccion_recibe" required>
+        </div>
+        <div class="mb-3">
+          <label for="categoria" class="form-label">Categoría</label>
+          <input type="text" id="categoria" class="form-control" [(ngModel)]="selectedEnvio.categoria" name="categoria" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar Envío</button>
+        <button type="button" class="btn btn-secondary" (click)="selectedEnvio = null">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

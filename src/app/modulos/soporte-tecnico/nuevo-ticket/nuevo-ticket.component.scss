@@ -1,0 +1,64 @@
+.container-fluid {
+  background-color: white;
+  border: 1px solid #508dce;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 600px;
+  margin-left: -100px;
+  font-family: Montserrat, sans-serif;
+  font-size: 25px;
+}
+  .titulo {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .btn-primary {
+    background-color: #508dce;
+    color: white;
+    border: 1px solid #508dce;
+    margin-top: 10px;
+  }
+
+  .form-group {
+    position: relative;
+  }
+
+  #observaciones {
+    border: 2px solid #508cde;
+    border-radius: 5px;
+    padding: 8px;
+  }
+
+  #observacionesHelp {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 10px;
+    color: #508dce;
+  }
+
+  /* Estilos adicionales para la ventana emergente */
+  .swal-title {
+    color: #508dce;
+  }
+
+  .swal-button--confirm {
+    background-color: #508cde;
+    color: white;
+  }
+  @media (max-width: 719px) {
+    .container-fluid {
+      width: 100%;
+      position: relative;
+      top: 20px;
+      left: 15%;
+      right: auto;
+      bottom: auto;
+      border-radius: 0;
+      box-shadow: none;
+      width: 55%;
+      font-size: 16px;
+      padding: 8px;
+    }
+  }

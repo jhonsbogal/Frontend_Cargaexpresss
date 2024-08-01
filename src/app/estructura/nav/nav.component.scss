@@ -1,0 +1,150 @@
+
+
+    /* Estilo para el título o subtítulo en el menú principal, en la sección de administración y en la sección de configuración */
+    .menuprincipal .nav-link:hover,
+    .administracion .nav-link:hover,
+    .configuracion .nav-link:hover {
+        background-color: #508dce; /* Color de fondo al pasar el ratón */
+        color: #ffffff; /* Color del texto al pasar el ratón */
+    }
+
+    /* Estilo para el título en el área de colapso, en la sección de administración y en la sección de configuración */
+    .menuprincipal .collapse .nav-link:hover,
+    .administracion .collapse .nav-link:hover,
+    .configuracion .collapse .nav-link:hover {
+        color: #ffffff; /* Color del texto al pasar el ratón */
+    }
+
+    /* Estilo para el subtítulo en el área de colapso, en la sección de administración y en la sección de configuración */
+    .menuprincipal .collapse .nav-link:hover .sub-text,
+    .administracion .collapse .nav-link:hover .sub-text,
+    .configuracion .collapse .nav-link:hover .sub-text {
+        border-left: 4px solid #508dce; /* Marcar el subtítulo con un borde izquierdo */
+        padding-left: 8px; /* Añadir espacio alrededor del subtítulo */
+    }
+
+    /* Estilo para el icono en el menú principal, en la sección de administración y en la sección de configuración */
+    .menuprincipal .nav-link svg,
+    .administracion .nav-link svg,
+    .configuracion .nav-link svg {
+        fill: #ffffff; /* Color del icono en el menú principal, en la sección de administración y en la sección de configuración */
+        text-decoration: underline;
+    }
+
+    /* Estilo para el icono en el área de colapso, en la sección de administración y en la sección de configuración */
+    .menuprincipal .collapse .nav-link svg,
+    .administracion .collapse .nav-link svg,
+    .configuracion .collapse .nav-link svg {
+        fill: #ffffff; /* Color del icono en el área de colapso, en la sección de administración y en la sección de configuración */
+    }
+
+    /* Estilo para el título en el menú principal al hacer hover en envios, producto o cliente */
+    .menuprincipal .nav-item > .nav-link:hover {
+        color: #ffffff; /* Color del texto al hacer hover */
+        text-decoration: underline white; /* Subrayado blanco */
+    }
+
+    /* Estilo para el subtítulo en el área de colapso al hacer hover en envios, producto o cliente */
+    .menuprincipal .nav-item > .nav-link:hover .sub-text {
+        border-left: 4px solid #ffffff; /* Marcar el subtítulo con un borde izquierdo */
+        padding-left: 8px; /* Añadir espacio alrededor del subtítulo */
+        text-decoration: underline;
+    }
+
+    /* Estilo para el título en la configuración al hacer hover */
+    .nav-link:hover {
+        background-color: #508dce; /* Color de fondo al hacer hover */
+        color: #ffffff; /* Color del texto al hacer hover */
+        text-decoration: underline white; /* Subrayado blanco */
+    }   
+
+    /* Estilo para el título en el menú principal al hacer clic en envios, producto o cliente */
+    .menuprincipal .nav-item.active > .nav-link,
+    .menuprincipal .nav-item.show > .nav-link,
+    .menuprincipal .nav-link:focus {
+        background-color: #508dce; /* Color de fondo al hacer clic */
+        color: #ffffff; /* Color del texto al hacer clic */
+    }
+
+    /* Estilo para el subtítulo en el área de colapso al hacer clic en envios, producto o cliente */
+    .menuprincipal .nav-item.active > .collapse .nav-item.active .nav-link,
+    .menuprincipal .nav-item.show > .collapse .nav-item.show .nav-link,
+    .menuprincipal .nav-link:focus .sub-text {
+        border-left: 4px solid #ffffff; /* Marcar el subtítulo con un borde izquierdo */
+        padding-left: 8px; /* Añadir espacio alrededor del subtítulo */
+    }
+
+    /* Estilo para el icono en el menú principal al hacer clic en envios, producto o cliente */
+    .menuprincipal .nav-item.active > .nav-link svg,
+    .menuprincipal .nav-item.show > .nav-link svg,
+    .menuprincipal .nav-link:focus svg {
+        fill: #ffffff; /* Color del icono al hacer clic */
+    }
+
+    /* Desactivar subrayado de las subcarpetas */
+    .menuprincipal .nav-item .nav-link:hover,
+    .menuprincipal .nav-item .nav-link:focus {
+        text-decoration: none;
+    }
+
+    /* Alinear las carpetas principales al centro */
+    .menuprincipal .nav-item {
+        text-align: center;
+    }
+
+    div.offcanvas-body {
+        background-color: #ffffff;
+    }
+
+    /* Aplicar la familia tipográfica 'Montserrat' a toda la barra lateral */
+    .sidebar,
+    .sidebar .nav-link,
+    .sidebar .collapse .nav-link {
+        font-family: Montserrat, sans-serif;
+    }
+
+    /* estilos */
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        bottom: 105px;
+        left: 20px; /* Corregir el espacio extra en 'left' */
+        z-index: 2;
+        border-radius: 10px; /* Borde redondeado */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombreado */
+    
+    }
+
+    /*menu tilulo h6 para separacion del  modulo administrativo*/
+    h6{ 
+    text-align: center;
+    color: #ffffff; 
+    font-weight: bold;
+    background-color: #508dce;
+    padding: 10px;
+    }
+
+    #centrarPrincipal{
+    text-align: center;
+
+    }
+
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+
+    .bi{
+    font-size: 15px;
+    color: blue;
+    margin-bottom: 10px;
+    }
+
+   /*tamaño de letra de nav*/
+.offcanvas-title {
+    font-size: 20px; 
+  }
+  
+  .menuprincipal a {
+    font-size: 16px; 
+  }
+  

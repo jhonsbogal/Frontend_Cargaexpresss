@@ -1,0 +1,146 @@
+
+<nav>
+  <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+    <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarMenuLabel">CARGAEXPRESS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+
+
+        <!-- ENVIOS con Collapse -->
+        <ul class="nav flex-column menuprincipal">
+          
+          <a class="nav-link" routerLink="/dashboard">
+            <i class="bi bi-house-door"></i>
+            INICIO
+          </a>
+
+          <!-- PRODUCTOS con Collapse -->
+          <li class="nav-item menuprincipal">
+            <a class="nav-link d-flex align-items-center gap-2" data-bs-toggle="collapse" href="#productosCollapse" role="button" aria-expanded="false" aria-controls="productosCollapse">
+              <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+              <i class="bi bi-truck"></i>
+               
+              VENTAS
+            </a>
+            <div class="collapse" id="productosCollapse">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/ventas/nuevoenvio">
+                    <i class="bi bi-caret-right-fill"></i>
+                    NUEVO ENVIO
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/ventas/nuevocliente">
+                    <i class="bi bi-caret-right-fill"></i>
+                    NUEVO CLIENTE
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/ventas/cotizacion">
+                    <i class="bi bi-caret-right-fill"></i>
+                    COTIZACIONES
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- CLIENTES con Collapse -->
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" data-bs-toggle="collapse" href="#clientesCollapse" role="button" aria-expanded="false" aria-controls="clientesCollapse">
+              <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+              <i class="bi bi-box-seam"></i>
+              OPERACIONES
+            </a>
+            <div class="collapse" id="clientesCollapse">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/operaciones/envio">
+                    <i class="bi bi-caret-right-fill"></i>
+                    RASTREO ENVIO
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/operaciones/inventario">
+                    <i class="bi bi-caret-right-fill"></i>
+                    INVENTARIO
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+            
+
+          <!-- RECURSOS HUMANOS con Collapse -->
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" data-bs-toggle="collapse" href="#recursosHumanosCollapse" role="button" aria-expanded="false" aria-controls="recursosHumanosCollapse">
+              <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+              <i class="bi bi-person-vcard"></i>
+              RECURSOS HUMANOS
+            </a>
+            <div class="collapse" id="recursosHumanosCollapse">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/rrhh/ingreso">
+                    <i class="bi bi-caret-right-fill"></i>
+                    INGRESO A NOMINA
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- USUARIO con Collapse -->
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" routerLink="usuarios">
+              <svg class="bi"><use xlink:href="#door-closed"/></svg>
+              <i class="bi bi-person-circle"></i>
+              USUARIO
+            </a>
+          </li>
+
+          <!-- SOPORTE TÉCNICO con Collapse -->
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" data-bs-toggle="collapse" href="#soporteTecnicoCollapse" role="button" aria-expanded="false" aria-controls="soporteTecnicoCollapse">
+              <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
+              <i class="bi bi-pc-display-horizontal"></i>
+              SOPORTE TÉCNICO
+            </a>
+            <div class="collapse" id="soporteTecnicoCollapse">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/soporte-tecnico/bandeja">
+                    <i class="bi bi-caret-right-fill"></i>
+                    BANDEJA DE TICKET
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/soporte-tecnico/nuevo-ticket">
+                    <i class="bi bi-caret-right-fill"></i>
+                    NUEVO TICKET
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <!-- <ul class="nav flex-column mb-auto menuprincipal">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" routerLink="/cerrar-sesion">
+              <svg class="bi"> <!-- Agrega aquí el código SVG si es necesario  </svg>
+              <i class="bi bi-door-open"></i>
+              CERRAR SESIÓN
+              </a>
+            </li>
+          </ul>
+        </ul>-->
+      </div>
+    </div>
+  </div>
+</nav>
+

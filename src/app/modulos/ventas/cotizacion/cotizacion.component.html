@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <h2 class="titulo text-center">Generador de Cotizaciones</h2>
+  <form id="cotizacionForm" (ngSubmit)="guardar()" #cotizacionForm="ngForm">
+    <div class="h6 form-group">
+      <label for="origen">Origen:</label>
+      <select class="form-control" id="origen" [(ngModel)]="cotizacion.origen" name="origen" (change)="calcularDistancia()" required #origen="ngModel" [ngClass]="{'is-invalid': origen.invalid && origen.touched}">
+        <option value="">Seleccione un origen</option>
+        <option value="1">Punto 1</option>
+        <option value="2">Punto 2</option>
+        <option value="3">Punto 3</option>
+      </select>
+     <!-- <div class="invalid-feedback">Debe seleccionar un origen.</div>-->
+    </div>
+    <br>
+    <div class="h6 form-group">
+      <label for="destino">Destino:</label>
+      <select class="form-control" id="destino" [(ngModel)]="cotizacion.destino" name="destino" (change)="calcularDistancia()" required #destino="ngModel" [ngClass]="{'is-invalid': destino.invalid && destino.touched}">
+        <option value="">Seleccione un destino</option>
+        <option value="1">Punto 1</option>
+        <option value="2">Punto 2</option>
+        <option value="3">Punto 3</option>
+      </select>
+     <!-- <div class="invalid-feedback">Debe seleccionar un destino.</div>-->
+    </div>
+    <br>
+    <div class="h6 form-group">
+      <label for="distancia">Distancia (en kilómetros):</label>
+      <input type="number" class="form-control" id="distancia" [(ngModel)]="cotizacion.distancia" name="distancia" readonly>
+    </div>
+    <br>
+    <div class="h6 form-group">
+      <label for="peso">Peso (en kilogramos):</label>
+      <input type="number" class="form-control" id="peso" [(ngModel)]="cotizacion.peso" name="peso" required #peso="ngModel" [ngClass]="{'is-invalid': peso.invalid && peso.touched}">
+      <div class="invalid-feedback">El peso es obligatorio.</div>
+    </div>
+    <br>
+    <div class="h6 col-md-4">
+      <label class="label-input" for="tipoMercancia">Tipo de Mercancía:</label>
+      <select id="tipoMercancia" class="form-control" [(ngModel)]="cotizacion.tipoMercancia" name="tipoMercancia" required #tipoMercancia="ngModel" [ngClass]="{'is-invalid': tipoMercancia.invalid && tipoMercancia.touched}">
+        <option value="">Seleccione un tipo de mercancía</option>
+        <option value="mercanciaPremium">Mercancía Premium</option>
+        <option value="mercanciaRegular">Mercancía Regular</option>
+        <option value="mayor25kg">Mercancía Mayor a 25 kg</option>
+      </select>
+      <!--<div class="invalid-feedback">Debe seleccionar un tipo de mercancía.</div> -->
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="cotizacionForm.invalid">Generar Cotización</button>
+  </form>
+  <div id="resultado" class="mt-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Origen</th>
+          <th>Destino</th>
+          <th>Distancia (km)</th>
+          <th>Peso (kg)</th>
+          <th>Tipo de Mercancía</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of cotizaciones">
+          <td>{{ c.origen }}</td>
+          <td>{{ c.destino }}</td>
+          <td>{{ c.distancia }}</td>
+          <td>{{ c.peso }}</td>
+          <td>{{ c.tipoMercancia }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

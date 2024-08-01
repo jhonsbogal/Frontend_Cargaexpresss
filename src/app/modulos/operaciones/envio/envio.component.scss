@@ -1,0 +1,82 @@
+.container-fluid{
+    font-family: Montserrat, sans-serif;
+    margin-right: 100px;
+    margin-left: 00px;
+    font-size: 15px ;
+   
+ /* estas sirven para que se desplace el rol cursor sin ser tapado por el footer*/
+    display:flex;
+    flex-direction: column;
+    overflow-y: auto;
+    min-height: 100dvh;
+
+}
+
+.titulo h3 {
+    text-align: center;
+    font-weight: bold;
+  
+}
+
+.label-input {
+    font-weight: bold;
+    color: #508cde;
+}
+
+.form {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+
+}
+
+.border-primary {
+    border-color: #508cde !important;
+}
+
+.boton-lista {
+    background-color: #508cde;
+    color: #fff;
+}
+
+.boton-lista:hover {
+    background-color: #5077b6;
+}
+
+#mensaje {
+    background: #508cde;
+}
+
+.btn-primary {
+    border-color: #5077b6;
+}
+
+.border {
+    border-color: #508cde !important;
+}
+
+.h6 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.buscar{
+margin-top: 20px ;}
+
+@media (max-width: 719px) {
+    .container-fluid {
+      width: 100%;
+      position: relative;
+      top: 20px;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      border-radius: 0;
+      box-shadow: none;
+      width: 370px;
+      font-size: 16px;
+      padding: 8px;
+    }
+  }

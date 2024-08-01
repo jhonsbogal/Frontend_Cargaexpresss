@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <h2 class="titulo">Bandeja de Tickets</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo de Problema</th>
+        <th>Usuario</th>
+        <th>Área</th>
+        <th>Observaciones</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of tickets">
+        <td>{{ ticket.id }}</td>
+        <td>{{ ticket.tipo_problema }}</td>
+        <td>{{ ticket.usuario_nombre }}</td>
+        <td>{{ ticket.area_reporta }}</td>
+        <td>{{ ticket.observaciones }}</td>
+        <td>
+          <!--<button (click)="seleccionarTicket(ticket)" class="btn btn-warning">Editar</button>-->
+          <button (click)="eliminarTicket(ticket.id)" class="btn btn-danger">Eliminar</button>
+         
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedTicket">
+    <h3>Editar Ticket</h3>
+    <form (ngSubmit)="actualizarTicket()">
+      <div class="form-group">
+        <label for="tipo_problema">Tipo de Problema</label>
+        <input type="text" id="tipo_problema" [(ngModel)]="selectedTicket.tipo_problema" name="tipo_problema" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="usuario_nombre">Usuario</label>
+        <input type="text" id="usuario_nombre" [(ngModel)]="selectedTicket.usuario_nombre" name="usuario_nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="area_reporta">Área</label>
+        <input type="text" id="area_reporta" [(ngModel)]="selectedTicket.area_reporta" name="area_reporta" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="observaciones">Observaciones</label>
+        <textarea id="observaciones" [(ngModel)]="selectedTicket.observaciones" name="observaciones" class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+  </div>
+</div>

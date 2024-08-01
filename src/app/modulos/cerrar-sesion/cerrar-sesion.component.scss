@@ -1,0 +1,45 @@
+
+  .cierre {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    border: 1px solid #508dce;
+    font-size: 20px;
+   
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 2px solid #508cde;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    margin-right: 600px;
+    margin-top: 250px;
+  }
+
+  th, td {
+    border: 1px solid #508cde;
+    padding: 10px;
+  }
+
+  h2 {
+    color: #508cde;
+  }
+
+  .message {
+    padding: 20px;
+  }
+
+  button {
+    background-color: #508cde;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #336699;
+  }

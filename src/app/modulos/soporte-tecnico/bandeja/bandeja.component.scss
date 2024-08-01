@@ -1,0 +1,44 @@
+
+  .container-fluid {
+    background-color: white;
+    border: 1px solid #508dce;
+    padding: auto;
+    margin: auto;
+    margin-right: 400px;
+    margin-left: auto;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    
+      
+  }
+
+  .titulo {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .btn-primary {
+    background-color: #508dce;
+    color: white;
+    border: 1px solid #508dce;
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  .atendido {
+    background-color: #d1e7dd; /* Color verde claro */
+  }
+  @media (max-width: 719px) {
+    .container-fluid {
+      width: 100%;
+      position: relative;
+      top: 20px;
+      left: -30%;
+      right: 50%;
+      bottom: auto;
+   
+      width: 30%;
+      font-size: 14px;
+  
+    }
+  }
+  

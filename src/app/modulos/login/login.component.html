@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Cargaexpress</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="assets/img/ms-icon-310x310.jpg" alt="Cargaexpress Logo">
+            <h2>Iniciar Sesión</h2>
+            <input type="usuario" id="usuario" placeholder="Usuario" class="form-control" [(ngModel)]="usuario">
+            <input type="contrasena" id="contrasena" placeholder="Contraseña" class="form-control" [(ngModel)]="contrasena">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <input type="button" value="Ingresar" class="btn btn-warning btn-iniciar" value="Comenzar" (click)="consulta('')">
+        </div>
+        <div class="right">
+            <h2>Bienvenidos a Cargaexpress</h2>
+            <p>Comienza tu viaje con nosotros.</p>
+            <p>¿Aún no tienes cuenta? Ingresa tus datos para solicitud de usuario a continuación:</p>
+            <button>SOLICITAR</button>
+        </div>
+    </div>
+</body>
+</html>

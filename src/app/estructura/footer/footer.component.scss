@@ -1,0 +1,22 @@
+/* Estilos para la etiqueta footer */
+
+
+  footer p {
+    margin-bottom: 5px; /* Reducir el espacio entre párrafos */
+  }
+
+  .footer-container {
+    /* Mantén tu pie de página en la parte inferior de la página */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #508DCE; /* Ajusta el color según tus necesidades */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    line-height: 1;
+    font-size: 14px;
+    z-index: 1;
+  }
+  

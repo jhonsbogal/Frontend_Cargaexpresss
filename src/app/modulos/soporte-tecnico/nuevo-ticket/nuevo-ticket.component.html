@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h2 class="titulo">Nuevo Requerimiento de Soporte Técnico</h2>
+
+  <form (ngSubmit)="guardar()">
+    <div class="form-group">
+      <label for="tipoProblema">Tipo de Problema:</label>
+      <select class="form-control" id="tipoProblema" [(ngModel)]="nuevoTicket.tipo_problema" name="tipo_problema" required>
+        <option value="problemas del programa">Problemas del programa</option>
+        <option value="problemas de computador">Problemas de computador</option>
+        <option value="problemas de internet">Problemas de internet</option>
+        <option value="problemas de acceso">Problemas de acceso</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="usuarioNombre">Nombre del Usuario:</label>
+      <input class="form-control" id="usuarioNombre" [(ngModel)]="nuevoTicket.usuario_nombre" name="usuario_nombre" required />
+    </div>
+
+    <div class="form-group">
+      <label for="areaReporta">Área que Reporta:</label>
+      <input class="form-control" id="areaReporta" [(ngModel)]="nuevoTicket.area_reporta" name="area_reporta" required />
+    </div>
+
+    <div class="form-group">
+      <label for="observaciones">Observaciones:</label>
+      <textarea class="form-control" id="observaciones" [(ngModel)]="nuevoTicket.observaciones" name="observaciones" rows="5" maxlength="500" required></textarea>
+      <small id="observacionesHelp" class="form-text text-muted">Máximo 500 palabras.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar Requerimiento</button>
+  </form>
+</div>

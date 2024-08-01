@@ -1,0 +1,130 @@
+<div class="container-fluid">
+  <h2 class="titulo">Registro de Empleados</h2>
+
+  <form (ngSubmit)="guardar()">
+    <div class="row mt-1">
+      <div class="col-md-4">
+        <label class="label-input" for="nombre">Nombre:</label>
+        <input type="text" id="nombre" class="form-control" [(ngModel)]="empleado.nombre" name="nombre" required>
+      </div>
+
+      <div class="col-md-4">
+        <label class="label-input" for="apellido">Apellido:</label>
+        <input type="text" id="apellido" class="form-control" [(ngModel)]="empleado.apellido" name="apellido" required>
+      </div>
+
+      <div class="col-md-4">
+        <label class="label-input" for="cedula">Cédula:</label>
+        <input type="text" id="cedula" class="form-control" [(ngModel)]="empleado.cedula" name="cedula" required>
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col-md-4">
+        <label class="label-input" for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" class="form-control" [(ngModel)]="empleado.telefono" name="telefono" required>
+      </div>
+
+      <div class="col-md-4">
+        <label class="label-input" for="sede">Sede:</label>
+        <select id="sede" class="form-control" [(ngModel)]="empleado.sede" name="sede" required>
+          <option value="sedePrincipal">Sede Principal</option>
+          <option value="sedeNorte">Sede Norte</option>
+          <option value="sedeSur">Sede Sur</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="label-input" for="puesto">Puesto:</label>
+        <select id="puesto" class="form-control" [(ngModel)]="empleado.puesto" name="puesto" required>
+          <option value="transporte">Transporte</option>
+          <option value="bodega">Bodega</option>
+          <option value="administrativo">Administrativo</option>
+          <option value="recepcion">Recepción</option>
+          <option value="contaduria">Contaduría</option>
+          <option value="juridica">Jurídica</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col-md-4">
+        <label class="label-input" for="salario">Salario:</label>
+        <input type="number" id="salario" class="form-control" [(ngModel)]="empleado.salario" name="salario" required>
+      </div>
+
+      <div class="col-md-4">
+        <label class="label-input" for="fechaAfiliacion">Fecha de Afiliación:</label>
+        <input type="date" id="fechaAfiliacion" class="form-control" [(ngModel)]="empleado.fechaAfiliacion" name="fechaAfiliacion" required>
+      </div>
+
+      <div class="col-md-4">
+        <label class="label-input" for="registroEPS">Registro EPS:</label>
+        <input type="text" id="registroEPS" class="form-control" [(ngModel)]="empleado.registroEPS" name="registroEPS" required>
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col-md-4">
+        <label class="label-input" for="registroARL">Registro ARL:</label>
+        <input type="text" id="registroARL" class="form-control" [(ngModel)]="empleado.registroARL" name="registroARL" required>
+      </div>
+
+      <div class="col-md-4">
+        <label class="label-input" for="registroPension">Registro Fondo de Pensiones:</label>
+        <input type="text" id="registroPension" class="form-control" [(ngModel)]="empleado.registroPension" name="registroPension" required>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <button type="submit" class="btn btn-primary boton-registrar">Registrar</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Tabla de empleados -->
+  <div class="mt-4">
+    <h3>Empleados Registrados</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Cédula</th>
+          <th>Teléfono</th>
+          <th>Sede</th>
+          <th>Puesto</th>
+          <th>Salario</th>
+          <th>Fecha de Afiliación</th>
+          <th>Registro EPS</th>
+          <th>Registro ARL</th>
+          <th>Registro Fondo de Pensiones</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empleados">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.nombre }}</td>
+          <td>{{ emp.apellido }}</td>
+          <td>{{ emp.cedula }}</td>
+          <td>{{ emp.telefono }}</td>
+          <td>{{ emp.sede }}</td>
+          <td>{{ emp.puesto }}</td>
+          <td>{{ emp.salario }}</td>
+          <td>{{ emp.fechaAfiliacion | date }}</td>
+          <td>{{ emp.registroEPS }}</td>
+          <td>{{ emp.registroARL }}</td>
+          <td>{{ emp.registroPension }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="seleccionarEmpleado(emp)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminarEmpleado(emp.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

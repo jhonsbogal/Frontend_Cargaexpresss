@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <h2 class="titulo">Nuevo Cliente</h2>
+
+  <div class="container">
+    <form (ngSubmit)="guardar()">
+      <div class="form-group">
+        <label for="nombre" class="label-input">Nombre:</label>
+        <input type="text" class="form-control border-primary" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="apellidos" class="label-input">Apellidos:</label>
+        <input type="text" class="form-control border-primary" id="apellidos" [(ngModel)]="cliente.apellidos" name="apellidos" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="label-input">Email:</label>
+        <input type="email" class="form-control border-primary" id="email" [(ngModel)]="cliente.email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="identificacion" class="label-input">Identificación:</label>
+        <input type="text" class="form-control border-primary" id="identificacion" [(ngModel)]="cliente.identificacion" name="identificacion" required>
+      </div>
+      <div class="form-group">
+        <label for="tipo_identificacion" class="label-input">Tipo de Identificación:</label>
+        <select class="form-control border-primary" id="tipo_identificacion" [(ngModel)]="cliente.tipo_identificacion" name="tipo_identificacion" required>
+          <option value="cedula">Cédula</option>
+          <option value="pasaporte">Pasaporte</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary boton-lista">Guardar</button>
+    </form>
+
+    <div class="mt-4">
+      <h3>Clientes Registrados</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Identificación</th>
+            <th>Tipo Identificación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.apellidos }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.identificacion }}</td>
+            <td>{{ cliente.tipo_identificacion }}</td>
+            <td>
+              <button class="btn btn-warning" (click)="seleccionarCliente(cliente)">Editar</button>
+              <button class="btn btn-danger" (click)="eliminarCliente(cliente.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
